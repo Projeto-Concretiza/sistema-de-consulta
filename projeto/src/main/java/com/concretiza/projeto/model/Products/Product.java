@@ -1,12 +1,14 @@
 package com.concretiza.projeto.model.Products;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import jdk.nashorn.internal.objects.annotations.Getter;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.annotation.Id;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.awt.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -14,25 +16,64 @@ import java.util.Calendar;
 @Table(name = "TB_PRODUCT")
 public class Product {
 
+    @javax.persistence.Id
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
-
+    private Long id;
+    private String name;
     private float price;
     private int quantity;
     private boolean available;
-    private Description description;
-    private ArrayList<String> tags;
-    private Calendar creationDate;
+    private String description;
+    private String path_img;
+    private String brand;
+    private String category;
+
+
+    public Product() {
+    }
 
     //getters and setters
 
-    public String getId() {
+
+    public String getPath_img() {
+        return path_img;
+    }
+
+    public void setPath_img(String path_img) {
+        this.path_img = path_img;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public float getPrice() {
@@ -59,27 +100,11 @@ public class Product {
         this.available = available;
     }
 
-    public Description getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(Description description) {
+    public void setDescription(String description) {
         this.description = description;
-    }
-
-    public ArrayList<String> getTags() {
-        return tags;
-    }
-
-    public void setTags(ArrayList<String> tags) {
-        this.tags = tags;
-    }
-
-    public Calendar getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(Calendar creationDate) {
-        this.creationDate = creationDate;
     }
 }
