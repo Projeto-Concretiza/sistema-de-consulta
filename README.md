@@ -7,12 +7,11 @@ Guia de instalação:
 - Assim quer abrir , use o comando "mvn clean install" no diretorio raiz do projeto, para garantir que todas dependencias estejam atualizdas.
 - O usuario e url do banco de dados devem constar no arquivo application.properties:
 
-    ```
+    #Markdown
     spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
 
     spring.datasource.url= jdbc:postgresql://localhost:5432/concretiza
     spring.datasource.username=claudio
     spring.jpa.hibernate.ddl-auto=update
-    ```
     
 - Após isso execute a classe ConcretizaApplication. O back-end da aplicação será startado. Para obter dados é necessario fazer alguns inserts no banco local.
