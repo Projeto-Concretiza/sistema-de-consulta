@@ -22,21 +22,32 @@ public class Package {
     @javax.persistence.Id
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private Long id;
 
     @OneToMany
     private List<Product> products;
 
+
+    private String category;
     private float totalPrice;
     private float totalWeight;
 
     //getters and setters
 
-    public String getId() {
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

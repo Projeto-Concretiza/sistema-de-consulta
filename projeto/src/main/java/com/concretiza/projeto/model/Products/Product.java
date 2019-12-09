@@ -23,7 +23,6 @@ public class Product {
     private String name;
     private float price;
     private int quantity;
-    private boolean available;
     private String description;
     private String path_img;
     private String brand;
@@ -90,14 +89,6 @@ public class Product {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-    }
-
-    public boolean isAvailable() {
-        return available;
-    }
-
-    public void setAvailable(boolean available) {
-        this.available = available;
     }
 
     public String getDescription() {
